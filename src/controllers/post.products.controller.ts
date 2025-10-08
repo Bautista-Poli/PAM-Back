@@ -7,12 +7,6 @@ export async function postProductController(req: Request, res: Response) {
   try {
     const { title, description, imageUrl, price } = req.body;
 
-    if (!title || !description || !imageUrl || price === undefined) {
-      return res
-        .status(400)
-        .json({ error: "Faltan campos obligatorios." });
-    }
-
     const newProduct = await prisma.product.create({
       data: {
         title,
