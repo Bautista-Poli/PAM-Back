@@ -1,5 +1,5 @@
 import express from 'express'
-import productsRouter from "./routes/products.route";
+import matchRouter from "./routes/match.route";
 
 const app = express()
 
@@ -10,7 +10,9 @@ app.get("/", (_req, res) => {
 });
 
 // Rutas de productos
-app.use("/products", productsRouter);
+app.use("/matches", matchRouter);
+
+//app.use("/table", matchRowRouter);
 
 const server = app.listen(3000, () =>
   console.log(`

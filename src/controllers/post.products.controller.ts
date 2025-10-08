@@ -3,24 +3,24 @@ import { Request, Response } from "express";
 
 const prisma = new PrismaClient();
 
-export async function postProductController(req: Request, res: Response) {
-  try {
-    const { title, description, imageUrl, price } = req.body;
+export type NewProductInput = {
+  title: string;
+  description: string; 
+  imageUrl: string;
+  price: number;
+};
 
-    const newProduct = await prisma.product.create({
-      data: {
-        title,
-        description,
-        imageUrl,
-        price: Number(price),
-      },
-    });
+export async function postProductController(product: NewProductInput) {
 
-    return res.status(201).json(newProduct);
-  } catch (error) {
-    console.error("Error al crear el producto:", error);
-    return res
-      .status(500)
-      .json({ error: "Hubo un error en el servidor." });
-  }
+    const created = await prisma.product.create({
+    data: {
+      title: product.title,
+      description: product.description,
+      imageUrl: product.imageUrl,
+      price: product.price, 
+    },
+  });
+  return created;
+
+   
 }
