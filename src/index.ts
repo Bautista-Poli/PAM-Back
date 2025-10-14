@@ -1,5 +1,6 @@
 import express from 'express'
 import matchRouter from "./routes/match.route";
+import playerRouter from './routes/player.route';
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.get("/", (_req, res) => {
 
 // Rutas de productos
 app.use("/matches", matchRouter);
+app.use("/players", playerRouter);
 
 //app.use("/table", matchRowRouter);
 

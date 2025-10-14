@@ -1,0 +1,566 @@
+[
+    {
+        "id": 19,
+        "full_name": "Franco Armani",
+        "team_id": 22
+    },
+    {
+        "id": 20,
+        "full_name": "Milton Casco",
+        "team_id": 22
+    },
+    {
+        "id": 21,
+        "full_name": "Enzo Pérez",
+        "team_id": 22
+    },
+    {
+        "id": 22,
+        "full_name": "Miguel Borja",
+        "team_id": 22
+    },
+    {
+        "id": 23,
+        "full_name": "Sergio Romero",
+        "team_id": 7
+    },
+    {
+        "id": 24,
+        "full_name": "Marcos Rojo",
+        "team_id": 7
+    },
+    {
+        "id": 25,
+        "full_name": "Darío Benedetto",
+        "team_id": 7
+    },
+    {
+        "id": 26,
+        "full_name": "Edinson Cavani",
+        "team_id": 7
+    },
+    {
+        "id": 27,
+        "full_name": "Francisco Gomez",
+        "team_id": 21
+    },
+    {
+        "id": 28,
+        "full_name": "Gabriel Arias",
+        "team_id": 21
+    },
+    {
+        "id": 29,
+        "full_name": "Facundo Cambeses",
+        "team_id": 21
+    },
+    {
+        "id": 30,
+        "full_name": "Agustín García",
+        "team_id": 21
+    },
+    {
+        "id": 31,
+        "full_name": "Marco Di Cesare",
+        "team_id": 21
+    },
+    {
+        "id": 32,
+        "full_name": "Marcos Rojo",
+        "team_id": 21
+    },
+    {
+        "id": 33,
+        "full_name": "Gastón Martirena",
+        "team_id": 21
+    },
+    {
+        "id": 34,
+        "full_name": "Franco Pardo",
+        "team_id": 21
+    },
+    {
+        "id": 35,
+        "full_name": "Nazareno Colombo",
+        "team_id": 21
+    },
+    {
+        "id": 36,
+        "full_name": "Gabriel Rojas",
+        "team_id": 21
+    },
+    {
+        "id": 37,
+        "full_name": "Facundo Mura",
+        "team_id": 21
+    },
+    {
+        "id": 38,
+        "full_name": "Santiago Quirós",
+        "team_id": 21
+    },
+    {
+        "id": 39,
+        "full_name": "Juan Nardoni",
+        "team_id": 21
+    },
+    {
+        "id": 40,
+        "full_name": "Alan Forneris",
+        "team_id": 21
+    },
+    {
+        "id": 41,
+        "full_name": "Matias Zaracho",
+        "team_id": 21
+    },
+    {
+        "id": 42,
+        "full_name": "Santiago Sosa",
+        "team_id": 21
+    },
+    {
+        "id": 43,
+        "full_name": "Martín Barrios",
+        "team_id": 21
+    },
+    {
+        "id": 44,
+        "full_name": "Ignacio Rodríguez",
+        "team_id": 21
+    },
+    {
+        "id": 45,
+        "full_name": "Adrian Fernandez",
+        "team_id": 21
+    },
+    {
+        "id": 46,
+        "full_name": "Richard Sánchez",
+        "team_id": 21
+    },
+    {
+        "id": 47,
+        "full_name": "Agustin Almendra",
+        "team_id": 21
+    },
+    {
+        "id": 48,
+        "full_name": "Bruno Zuculini",
+        "team_id": 21
+    },
+    {
+        "id": 49,
+        "full_name": "David Gonzalez",
+        "team_id": 21
+    },
+    {
+        "id": 50,
+        "full_name": "Sergio Sánchez",
+        "team_id": 21
+    },
+    {
+        "id": 51,
+        "full_name": "Duván Vergara",
+        "team_id": 21
+    },
+    {
+        "id": 52,
+        "full_name": "Adrian Martinez",
+        "team_id": 21
+    },
+    {
+        "id": 53,
+        "full_name": "Luciano Vietto",
+        "team_id": 21
+    },
+    {
+        "id": 54,
+        "full_name": "Tomas Conechny",
+        "team_id": 21
+    },
+    {
+        "id": 55,
+        "full_name": "Elias Torres",
+        "team_id": 21
+    },
+    {
+        "id": 56,
+        "full_name": "Santiago Solari",
+        "team_id": 21
+    },
+    {
+        "id": 57,
+        "full_name": "Ramiro Degregorio",
+        "team_id": 21
+    },
+    {
+        "id": 58,
+        "full_name": "Adrián Balboa",
+        "team_id": 21
+    },
+    {
+        "id": 59,
+        "full_name": "Jorge Broun",
+        "team_id": 23
+    },
+    {
+        "id": 60,
+        "full_name": "Axel Werner",
+        "team_id": 23
+    },
+    {
+        "id": 61,
+        "full_name": "Damian Fernandez",
+        "team_id": 23
+    },
+    {
+        "id": 62,
+        "full_name": "Carlos Quintana",
+        "team_id": 23
+    },
+    {
+        "id": 63,
+        "full_name": "Agustín Sández",
+        "team_id": 23
+    },
+    {
+        "id": 64,
+        "full_name": "Juan Komar",
+        "team_id": 23
+    },
+    {
+        "id": 65,
+        "full_name": "Facundo Mallo",
+        "team_id": 23
+    },
+    {
+        "id": 66,
+        "full_name": "Juan Giménez",
+        "team_id": 23
+    },
+    {
+        "id": 67,
+        "full_name": "Emanuel Coronel",
+        "team_id": 23
+    },
+    {
+        "id": 68,
+        "full_name": "Juan Manuel Elordi",
+        "team_id": 23
+    },
+    {
+        "id": 69,
+        "full_name": "Franco Ibarra",
+        "team_id": 23
+    },
+    {
+        "id": 70,
+        "full_name": "Ignacio Malcorra",
+        "team_id": 23
+    },
+    {
+        "id": 71,
+        "full_name": "Enzo Giménez",
+        "team_id": 23
+    },
+    {
+        "id": 72,
+        "full_name": "Luis Segovia",
+        "team_id": 23
+    },
+    {
+        "id": 73,
+        "full_name": "Francesco Lo Celso",
+        "team_id": 23
+    },
+    {
+        "id": 74,
+        "full_name": "Tomas O'Connor",
+        "team_id": 23
+    },
+    {
+        "id": 75,
+        "full_name": "Federico Navarro",
+        "team_id": 23
+    },
+    {
+        "id": 76,
+        "full_name": "Jaminton Campaz",
+        "team_id": 23
+    },
+    {
+        "id": 77,
+        "full_name": "Maximiliano Lovera",
+        "team_id": 23
+    },
+    {
+        "id": 78,
+        "full_name": "Enzo Copetti",
+        "team_id": 23
+    },
+    {
+        "id": 79,
+        "full_name": "Alejo Véliz",
+        "team_id": 23
+    },
+    {
+        "id": 80,
+        "full_name": "Angel Di Maria",
+        "team_id": 23
+    },
+    {
+        "id": 81,
+        "full_name": "Santiago Lopéz",
+        "team_id": 23
+    },
+    {
+        "id": 82,
+        "full_name": "Gaspar Duarte",
+        "team_id": 23
+    },
+    {
+        "id": 83,
+        "full_name": "Fabricio Oviedo",
+        "team_id": 23
+    },
+    {
+        "id": 84,
+        "full_name": "Agustin Modica",
+        "team_id": 23
+    },
+    {
+        "id": 85,
+        "full_name": "Lucas Lavagnino",
+        "team_id": 15
+    },
+    {
+        "id": 86,
+        "full_name": "Joaquin Blázquez",
+        "team_id": 15
+    },
+    {
+        "id": 87,
+        "full_name": "Rodrigo Rey",
+        "team_id": 15
+    },
+    {
+        "id": 88,
+        "full_name": "Milton Valenzuela",
+        "team_id": 15
+    },
+    {
+        "id": 89,
+        "full_name": "Federico Vera",
+        "team_id": 15
+    },
+    {
+        "id": 90,
+        "full_name": "Nicolas Freire",
+        "team_id": 15
+    },
+    {
+        "id": 91,
+        "full_name": "Santiago Montiel",
+        "team_id": 15
+    },
+    {
+        "id": 92,
+        "full_name": "Facundo Zabala",
+        "team_id": 15
+    },
+    {
+        "id": 93,
+        "full_name": "Kevin Lomónaco",
+        "team_id": 15
+    },
+    {
+        "id": 94,
+        "full_name": "Leonardo Godoy",
+        "team_id": 15
+    },
+    {
+        "id": 95,
+        "full_name": "Franco Paredes",
+        "team_id": 15
+    },
+    {
+        "id": 96,
+        "full_name": "Sebastián Valdez",
+        "team_id": 15
+    },
+    {
+        "id": 97,
+        "full_name": "Felipe Loyola",
+        "team_id": 15
+    },
+    {
+        "id": 98,
+        "full_name": "Pablo Galdames",
+        "team_id": 15
+    },
+    {
+        "id": 99,
+        "full_name": "Luciano Cabral",
+        "team_id": 15
+    },
+    {
+        "id": 100,
+        "full_name": "Federico Mancuello",
+        "team_id": 15
+    },
+    {
+        "id": 101,
+        "full_name": "Lautaro Millán",
+        "team_id": 15
+    },
+    {
+        "id": 102,
+        "full_name": "Rodrigo Fernández",
+        "team_id": 15
+    },
+    {
+        "id": 103,
+        "full_name": "Ivan Marcone",
+        "team_id": 15
+    },
+    {
+        "id": 104,
+        "full_name": "Gabriel Avalos",
+        "team_id": 15
+    },
+    {
+        "id": 105,
+        "full_name": "Walter Mazzantti",
+        "team_id": 15
+    },
+    {
+        "id": 106,
+        "full_name": "Matías Abaldo",
+        "team_id": 15
+    },
+    {
+        "id": 107,
+        "full_name": "Ignacio Pussetto",
+        "team_id": 15
+    },
+    {
+        "id": 108,
+        "full_name": "Diego Tarzia",
+        "team_id": 15
+    },
+    
+  { "full_name": "Tomás Marchiori", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Alvaro Montero", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Lautaro Garzón", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Emanuel Mammana", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Elias Gomez", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Joaquin García", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Aarón Quirós", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Agustin Lagos", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Lisandro Magallan", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Jano Gordon", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Tomás Cavanagh", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Isaias Andrada", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Claudio Baeza", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Tomás Galván", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Diego Valdes", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Leonel Roldán", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Manuel Lanzini", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Agustin Bouzat", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Thiago Fernandez", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Rodrigo Aliendro", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Kevin Vazquez", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Francisco Pozzo", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Michael Santos", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Braian Romero", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Matías Pellegrini", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Francisco Pizzini", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Florián Monzón", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Maher Carrizo", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Imanol Machuca", "team_name": "Vélez Sarsfield" },
+  { "full_name": "Ignacio Arce", "team_name": "Deportivo Riestra" },
+  { "full_name": "Nahuel Manganelli", "team_name": "Deportivo Riestra" },
+  { "full_name": "Jaime Barceló", "team_name": "Deportivo Riestra" },
+  { "full_name": "Eric Tovo", "team_name": "Deportivo Riestra" },
+  { "full_name": "Nicolas Caro Torres", "team_name": "Deportivo Riestra" },
+  { "full_name": "Yaison Murillo", "team_name": "Deportivo Riestra" },
+  { "full_name": "Pedro Ramírez", "team_name": "Deportivo Riestra" },
+  { "full_name": "Miguel Barbieri", "team_name": "Deportivo Riestra" },
+  { "full_name": "Rodrigo Gallo", "team_name": "Deportivo Riestra" },
+  { "full_name": "Juan Randazzo", "team_name": "Deportivo Riestra" },
+  { "full_name": "Cristian Paz", "team_name": "Deportivo Riestra" },
+  { "full_name": "Facundo Miño", "team_name": "Deportivo Riestra" },
+  { "full_name": "Jonatan Goitía", "team_name": "Deportivo Riestra" },
+  { "full_name": "Nehuen Montoya", "team_name": "Deportivo Riestra" },
+  { "full_name": "Mariano Bracamonte", "team_name": "Deportivo Riestra" },
+  { "full_name": "Santiago Vera", "team_name": "Deportivo Riestra" },
+  { "full_name": "Pablo Daniel Monje", "team_name": "Deportivo Riestra" },
+  { "full_name": "Nicolás Sansotre", "team_name": "Deportivo Riestra" },
+  { "full_name": "Mateo Ramírez", "team_name": "Deportivo Riestra" },
+  { "full_name": "Ariel Muñoz", "team_name": "Deportivo Riestra" },
+  { "full_name": "Franco Fagundez", "team_name": "Deportivo Riestra" },
+  { "full_name": "Rodrigo Sayavedra", "team_name": "Deportivo Riestra" },
+  { "full_name": "Leonardo Landriel", "team_name": "Deportivo Riestra" },
+  { "full_name": "Mauro Smarra", "team_name": "Deportivo Riestra" },
+  { "full_name": "Gabriel Obredor", "team_name": "Deportivo Riestra" },
+  { "full_name": "Antony Alonso", "team_name": "Deportivo Riestra" },
+  { "full_name": "Milton Celiz", "team_name": "Deportivo Riestra" },
+  { "full_name": "Jonathan Herrera", "team_name": "Deportivo Riestra" },
+  { "full_name": "Braian Guille", "team_name": "Deportivo Riestra" },
+  { "full_name": "Alexander Díaz", "team_name": "Deportivo Riestra" },
+  { "full_name": "Nicolás Benegas", "team_name": "Deportivo Riestra" },
+  { "full_name": "Ángel Stringa", "team_name": "Deportivo Riestra" },
+  { "full_name": "Orlando Gill", "team_name": "San lorenzo" },
+  { "full_name": "Facundo Altamirano", "team_name": "San lorenzo" },
+  { "full_name": "Jhohan Romaña", "team_name": "San lorenzo" },
+  { "full_name": "Nery Dominguez", "team_name": "San lorenzo" },
+  { "full_name": "Gastón Hernández", "team_name": "San lorenzo" },
+  { "full_name": "Nicolas Tripichio", "team_name": "San lorenzo" },
+  { "full_name": "Nahuel Arias", "team_name": "San lorenzo" },
+  { "full_name": "Ezequiel Herrera", "team_name": "San lorenzo" },
+  { "full_name": "Teo Rodríguez", "team_name": "San lorenzo" },
+  { "full_name": "Fabricio López", "team_name": "San lorenzo" },
+  { "full_name": "Daniel Herrera", "team_name": "San lorenzo" },
+  { "full_name": "Elias Báez", "team_name": "San lorenzo" },
+  { "full_name": "Maximiliano Zelaya", "team_name": "San lorenzo" },
+  { "full_name": "Emanuel Cecchini", "team_name": "San lorenzo" },
+  { "full_name": "Manuel Insaurralde", "team_name": "San lorenzo" },
+  { "full_name": "Francisco Perruzzi", "team_name": "San lorenzo" },
+  { "full_name": "Ignacio Perruzzi", "team_name": "San lorenzo" },
+  { "full_name": "Juan Cruz Rattalino", "team_name": "San lorenzo" },
+  { "full_name": "Agustin Ladstatter", "team_name": "San lorenzo" },
+  { "full_name": "Ezequiel Cerutti", "team_name": "San lorenzo" },
+  { "full_name": "Andres Vombergar", "team_name": "San lorenzo" },
+  { "full_name": "Matías Reali", "team_name": "San lorenzo" },
+  { "full_name": "Diego Herazo", "team_name": "San lorenzo" },
+  { "full_name": "Alexis Cuello", "team_name": "San lorenzo" },
+  { "full_name": "Fabricio Iacovich", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Fernando Muslera", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Juan Guasone", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Facundo Rodríguez", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Román Gómez", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Santiago Núñez", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Gastón Benedetti", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Leandro Gonzalez Pirez", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Santiago Arzamendia", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Eric Meza", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Ramiro Funes Mori", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Santiago Ascacibar", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "José Sosa", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Gabriel Neves", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Tiago Palacios", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Ezequiel Piovi", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Alexis Castro", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Leonardo Suárez", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Cristian Medina", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Mikel Amondarain", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Guido Carrillo", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Facundo Farías", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Joaquín Tobio Burgos", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Edwin Cetré", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Lucas Alario", "team_name": "Estudiantes de La Plata" },
+  { "full_name": "Fabricio Perez", "team_name": "Estudiantes de La Plata" }
+
+]
+
