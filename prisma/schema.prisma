@@ -11,10 +11,11 @@ datasource db {
 model club {
   id          Int             @id @default(autoincrement())
   league_key  String          @default("global")
-  nombre      String          // ← nombre del club (antes `name`)
+  nombre      String          
   crest_url   String
 
-  players     player_table[]  // ← relación con jugadores
+  players     player_table[]  // ← relacion con jugadores
+  users       user_table[]   // ← relacion con usuarios
 
   @@index([league_key])
   @@unique([league_key, nombre])
@@ -52,6 +53,17 @@ model match_row {
   match_date DateTime? @default(now()) @db.Timestamptz(6)
   first_seen DateTime? @default(now()) @db.Timestamptz(6)
   updated_at DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model user_table {
+  id          Int      @id @default(autoincrement())
+  usuario     String   @unique
+  mail        String   @unique
+  club_id     Int
+  contrasena  String
+
+  // Relación con el club
+  club        club     @relation(fields: [club_id], references: [id])
 }
 
 model player_table {
