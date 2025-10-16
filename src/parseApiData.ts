@@ -13,23 +13,14 @@ async function main() {
     if (!response.ok) {
         throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
-    const data = await response.json() as ApiResponse
-    if(!checkApiResponseType(data)){
+
+    if(!checkApiResponseType(response.json())){
         throw new Error("Invalid Response, incorrect datatype")
     }
 
-    interface MatchRow {
-        league: string;
-        home_team: string;
-        away_team: string;
-        home_club_id?: string;
-        away_club_id?: string;
-        score_home?: number;
-        score_away?: number;
-        minute?: number;
-        match_date?: Date;
-        updated_at?: Date;
-    }    
+    const data = await response.json() as ApiResponse
+  
+
     const leagueName = data.leagues?.[0]?.name ?? 'Liga Desconocida';
     
     const key = (league: string, name: string) =>
