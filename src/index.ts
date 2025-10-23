@@ -1,6 +1,7 @@
 import express from 'express'
 import matchRouter from "./routes/match.route";
 import playerRouter from './routes/player.route';
+import clubRouter from './routes/club.route'
 import userRouter from './routes/user.route'
 
 const app = express()
@@ -15,6 +16,7 @@ app.get("/", (_req, res) => {
 app.use("/matches", matchRouter);
 app.use("/players", playerRouter);
 
+app.use("/clubs", clubRouter);
 app.use("/user", userRouter);
 
 //app.use("/table", matchRowRouter);
