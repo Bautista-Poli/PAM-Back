@@ -16,13 +16,14 @@ async function main() {
 
     const data = await response.json() as ApiResponse;
 
-    // B. <--- CAMBIO CLAVE: VERIFICAR LA VARIABLE DE DATOS
     if (!checkApiResponseType(data)) {
         throw new Error("Invalid Response, incorrect datatype")
     }
 
-
-    const leagueName = data.leagues?.[0]?.name ?? 'Liga Desconocida';
+    let leagueName = data.leagues?.[0]?.name ?? 'Liga Desconocida';
+    if (leagueName === 'Argentine Liga Profesional de Fútbol') {
+        leagueName = 'Liga Profesional Argentina';
+    }
 
     const key = (league: string, name: string) =>
         `${(league ?? '').trim().toLowerCase()}|${(name ?? '').trim().toLowerCase()}`;
@@ -36,13 +37,16 @@ async function main() {
 
     await prisma.match_row.deleteMany();
 
-
     const matches = data.events.map((event: any) => {
-
         const homeTeamName = event.competitions[0].competitors[0].team.displayName;
         const awayTeamName = event.competitions[0].competitors[1].team.displayName;
         const homeId = clubIdByKey.get(key(leagueName, homeTeamName));
         const awayId = clubIdByKey.get(key(leagueName, awayTeamName));
+
+        let match_date = new Date(event.date)
+        if (leagueName === 'Liga Profesional Argentina') {
+            match_date.setHours(match_date.getHours() - 3);
+        }
 
         return {
             league: leagueName,
@@ -53,15 +57,20 @@ async function main() {
             score_home: parseInt(event.competitions[0].competitors[0].score),
             score_away: parseInt(event.competitions[0].competitors[1].score),
             minute: null,
-            match_date: new Date(event.date.slice(0, 9)),
-            updated_at: new Date(event.date.slice(0, 9))
+            match_date: match_date,
+            updated_at: new Date()
         };
+    });
 
-
-    })
-    console.log(matches)
-    await prisma.match_row.createMany({ data: matches, skipDuplicates: true, });
+    console.log(matches);
+    await prisma.match_row.createMany({ data: matches, skipDuplicates: true });
 }
 
-
 main()
+    .catch((e) => {
+        console.error('❌ Error en el seed:', e);
+        process.exit(1);
+    })
+    .finally(async () => {
+        await prisma.$disconnect();
+    });
