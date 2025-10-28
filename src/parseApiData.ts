@@ -9,18 +9,34 @@ function checkApiResponseType(apiResponse: any) {
 async function main() {
 
     const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard';
-    const response = await fetch(espnApiUrl);
-    if (!response.ok) {
-        throw new Error(`Failed to fetch data: ${response.statusText}`);
+    
+    // Obtener partidos de hoy y mañana
+    const responseToday = await fetch(espnApiUrl);
+    if (!responseToday.ok) {
+        throw new Error(`Failed to fetch data: ${responseToday.statusText}`);
     }
+    const dataToday = await responseToday.json() as ApiResponse;
 
-    const data = await response.json() as ApiResponse;
+    // Obtener partidos de ayer
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayFormatted = yesterday.toISOString().split('T')[0].replace(/-/g, '');
+    const espnApiUrlYesterday = `https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard?dates=${yesterdayFormatted}`;
+    
+    const responseYesterday = await fetch(espnApiUrlYesterday);
+    if (!responseYesterday.ok) {
+        throw new Error(`Failed to fetch yesterday data: ${responseYesterday.statusText}`);
+    }
+    const dataYesterday = await responseYesterday.json() as ApiResponse;
 
-    if (!checkApiResponseType(data)) {
+    if (!checkApiResponseType(dataToday) || !checkApiResponseType(dataYesterday)) {
         throw new Error("Invalid Response, incorrect datatype")
     }
 
-    let leagueName = data.leagues?.[0]?.name ?? 'Liga Desconocida';
+    // Combinar eventos de hoy y ayer
+    const allEvents = [...(dataToday.events || []), ...(dataYesterday.events || [])];
+
+    let leagueName = dataToday.leagues?.[0]?.name ?? 'Liga Desconocida';
     if (leagueName === 'Argentine Liga Profesional de Fútbol') {
         leagueName = 'Liga Profesional Argentina';
     }
@@ -37,7 +53,7 @@ async function main() {
 
     await prisma.match_row.deleteMany();
 
-    const matches = data.events.map((event: any) => {
+    const matches = allEvents.map((event: any) => {
         const homeTeamName = event.competitions[0].competitors[0].team.displayName;
         const awayTeamName = event.competitions[0].competitors[1].team.displayName;
         const homeId = clubIdByKey.get(key(leagueName, homeTeamName));
@@ -68,7 +84,7 @@ async function main() {
 
 main()
     .catch((e) => {
-        console.error('❌ Error en el seed:', e);
+        console.error('âŒ Error en el seed:', e);
         process.exit(1);
     })
     .finally(async () => {
