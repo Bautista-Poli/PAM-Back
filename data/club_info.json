@@ -328,6 +328,228 @@
     "colores": "Verde y Negro",
     "añoFundacion": 1907,
     "entrenador": "Leandro Romagnoli"
-  }
+  },
+
+
+  {
+  "club_nombre": "Arsenal",
+  "titulosNacionales": 46,
+  "titulosInternac": 3,
+  "nombreEstadio": "Emirates Stadium",
+  "capacidadEstadio": 60704,
+  "ciudad": "Londres",
+  "colores": "Rojo y Blanco",
+  "añoFundacion": 1886,
+  "entrenador": "Mikel Arteta"
+},
+{
+  "club_nombre": "Aston Villa",
+  "titulosNacionales": 20,
+  "titulosInternac": 1,
+  "nombreEstadio": "Villa Park",
+  "capacidadEstadio": 42657,
+  "ciudad": "Birmingham",
+  "colores": "Granate y Celeste",
+  "añoFundacion": 1874,
+  "entrenador": "Unai Emery"
+},
+{
+  "club_nombre": "Bournemouth",
+  "titulosNacionales": 0,
+  "titulosInternac": 0,
+  "nombreEstadio": "Vitality Stadium",
+  "capacidadEstadio": 11364,
+  "ciudad": "Bournemouth",
+  "colores": "Rojo y Negro",
+  "añoFundacion": 1899,
+  "entrenador": "Andoni Iraola"
+},
+{
+  "club_nombre": "Brentford",
+  "titulosNacionales": 1,
+  "titulosInternac": 0,
+  "nombreEstadio": "Gtech Community Stadium",
+  "capacidadEstadio": 17250,
+  "ciudad": "Londres",
+  "colores": "Rojo y Blanco",
+  "añoFundacion": 1889,
+  "entrenador": "Thomas Frank"
+},
+{
+  "club_nombre": "Brighton",
+  "titulosNacionales": 1,
+  "titulosInternac": 0,
+  "nombreEstadio": "AMEX Stadium",
+  "capacidadEstadio": 31800,
+  "ciudad": "Brighton",
+  "colores": "Azul y Blanco",
+  "añoFundacion": 1901,
+  "entrenador": "Fabian Hürzeler"
+},
+{
+  "club_nombre": "Chelsea",
+  "titulosNacionales": 24,
+  "titulosInternac": 11,
+  "nombreEstadio": "Stamford Bridge",
+  "capacidadEstadio": 40341,
+  "ciudad": "Londres",
+  "colores": "Azul",
+  "añoFundacion": 1905,
+  "entrenador": "Enzo Maresca"
+},
+{
+  "club_nombre": "Crystal Palace",
+  "titulosNacionales": 2,
+  "titulosInternac": 0,
+  "nombreEstadio": "Selhurst Park",
+  "capacidadEstadio": 25486,
+  "ciudad": "Londres",
+  "colores": "Azul y Rojo",
+  "añoFundacion": 1905,
+  "entrenador": "Oliver Glasner"
+},
+{
+  "club_nombre": "Everton",
+  "titulosNacionales": 23,
+  "titulosInternac": 1,
+  "nombreEstadio": "Goodison Park",
+  "capacidadEstadio": 39414,
+  "ciudad": "Liverpool",
+  "colores": "Azul",
+  "añoFundacion": 1878,
+  "entrenador": "Sean Dyche"
+},
+{
+  "club_nombre": "Fulham",
+  "titulosNacionales": 1,
+  "titulosInternac": 0,
+  "nombreEstadio": "Craven Cottage",
+  "capacidadEstadio": 25700,
+  "ciudad": "Londres",
+  "colores": "Blanco y Negro",
+  "añoFundacion": 1879,
+  "entrenador": "Marco Silva"
+},
+{
+  "club_nombre": "Liverpool",
+  "titulosNacionales": 51,
+  "titulosInternac": 14,
+  "nombreEstadio": "Anfield",
+  "capacidadEstadio": 61000,
+  "ciudad": "Liverpool",
+  "colores": "Rojo",
+  "añoFundacion": 1892,
+  "entrenador": "Arne Slot"
+},
+{
+  "club_nombre": "Manchester City",
+  "titulosNacionales": 28,
+  "titulosInternac": 3,
+  "nombreEstadio": "Etihad Stadium",
+  "capacidadEstadio": 53400,
+  "ciudad": "Mánchester",
+  "colores": "Celeste y Blanco",
+  "añoFundacion": 1880,
+  "entrenador": "Pep Guardiola"
+},
+{
+  "club_nombre": "Manchester United",
+  "titulosNacionales": 51,
+  "titulosInternac": 6,
+  "nombreEstadio": "Old Trafford",
+  "capacidadEstadio": 74310,
+  "ciudad": "Mánchester",
+  "colores": "Rojo",
+  "añoFundacion": 1878,
+  "entrenador": "Ruben Amorim"
+},
+{
+  "club_nombre": "Newcastle United",
+  "titulosNacionales": 11,
+  "titulosInternac": 1,
+  "nombreEstadio": "St James' Park",
+  "capacidadEstadio": 52338,
+  "ciudad": "Newcastle upon Tyne",
+  "colores": "Blanco y Negro",
+  "añoFundacion": 1892,
+  "entrenador": "Eddie Howe"
+},
+{
+  "club_nombre": "Nottingham Forest",
+  "titulosNacionales": 4,
+  "titulosInternac": 2,
+  "nombreEstadio": "The City Ground",
+  "capacidadEstadio": 30445,
+  "ciudad": "Nottingham",
+  "colores": "Rojo",
+  "añoFundacion": 1865,
+  "entrenador": "Sean Dyche"
+},
+{
+  "club_nombre": "Tottenham Hotspur",
+  "titulosNacionales": 21,
+  "titulosInternac": 3,
+  "nombreEstadio": "Tottenham Hotspur Stadium",
+  "capacidadEstadio": 62850,
+  "ciudad": "Londres",
+  "colores": "Blanco y Azul",
+  "añoFundacion": 1882,
+  "entrenador": "Ange Postecoglou"
+},
+{
+  "club_nombre": "West Ham United",
+  "titulosNacionales": 4,
+  "titulosInternac": 2,
+  "nombreEstadio": "London Stadium",
+  "capacidadEstadio": 62500,
+  "ciudad": "Londres",
+  "colores": "Granate y Celeste",
+  "añoFundacion": 1895,
+  "entrenador": "Julen Lopetegui"
+},
+{
+  "club_nombre": "Wolverhampton",
+  "titulosNacionales": 7,
+  "titulosInternac": 1,
+  "nombreEstadio": "Molineux Stadium",
+  "capacidadEstadio": 31700,
+  "ciudad": "Wolverhampton",
+  "colores": "Amarillo y Negro",
+  "añoFundacion": 1877,
+  "entrenador": "Gary O'Neil"
+},
+{
+  "club_nombre": "Burnley",
+  "titulosNacionales": 5,
+  "titulosInternac": 0,
+  "nombreEstadio": "Turf Moor",
+  "capacidadEstadio": 21401,
+  "ciudad": "Burnley",
+  "colores": "Granate y Celeste",
+  "añoFundacion": 1882,
+  "entrenador": "Scott Parker"
+},
+{
+  "club_nombre": "Leeds",
+  "titulosNacionales": 10,
+  "titulosInternac": 2,
+  "nombreEstadio": "Elland Road",
+  "capacidadEstadio": 37908,
+  "ciudad": "Leeds",
+  "colores": "Blanco y Azul",
+  "añoFundacion": 1919,
+  "entrenador": "Daniel Farke"
+},
+{
+  "club_nombre": "Sunderland",
+  "titulosNacionales": 10,
+  "titulosInternac": 0,
+  "nombreEstadio": "Stadium of Light",
+  "capacidadEstadio": 48707,
+  "ciudad": "Sunderland",
+  "colores": "Rojo y Blanco",
+  "añoFundacion": 1879,
+  "entrenador": "Michael Beale"
+}
 
 ]
