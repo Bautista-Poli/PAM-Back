@@ -5,8 +5,17 @@ const prisma = new PrismaClient();
 
 export const getClubsController = async (req: Request, res: Response) => {
 
+  const { league_key } = req.query;
+
   try {
+
+    const whereClause: { league_key?: string } = {};
+    if (typeof league_key === 'string' && league_key) {
+      whereClause.league_key = league_key;
+    }
+
     const clubs = await prisma.club.findMany({
+      where: whereClause,
       orderBy: {
         nombre: 'asc',
       },
