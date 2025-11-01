@@ -10,7 +10,7 @@ async function main() {
 
     const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard';
     
-    // Obtener partidos de hoy y mañana
+    // Obtener partidos de hoy
     const responseToday = await fetch(espnApiUrl);
     if (!responseToday.ok) {
         throw new Error(`Failed to fetch data: ${responseToday.statusText}`);
@@ -21,7 +21,7 @@ async function main() {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayFormatted = yesterday.toISOString().split('T')[0].replace(/-/g, '');
-    const espnApiUrlYesterday = `https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard?dates=${yesterdayFormatted}`;
+    const espnApiUrlYesterday = espnApiUrl+`?dates=${yesterdayFormatted}`;
     
     const responseYesterday = await fetch(espnApiUrlYesterday);
     if (!responseYesterday.ok) {
@@ -29,12 +29,24 @@ async function main() {
     }
     const dataYesterday = await responseYesterday.json() as ApiResponse;
 
-    if (!checkApiResponseType(dataToday) || !checkApiResponseType(dataYesterday)) {
+    // Obtener partidos de mañana
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowFormatted = tomorrow.toISOString().split('T')[0].replace(/-/g, '');
+    const espnApiUrlTomorrow = espnApiUrl+`?dates=${tomorrowFormatted}`;
+    
+    const responseTomorrow = await fetch(espnApiUrlTomorrow);
+    if (!responseTomorrow.ok) {
+        throw new Error(`Failed to fetch yesterday data: ${responseTomorrow.statusText}`);
+    }
+    const dataTomorrow = await responseTomorrow.json() as ApiResponse;
+
+    if (!checkApiResponseType(dataToday) || !checkApiResponseType(dataYesterday) || !checkApiResponseType(dataTomorrow)) {
         throw new Error("Invalid Response, incorrect datatype")
     }
 
     // Combinar eventos de hoy y ayer
-    const allEvents = [...(dataToday.events || []), ...(dataYesterday.events || [])];
+    const allEvents = [...(dataToday.events || []), ...(dataYesterday.events || []), ...(dataTomorrow.events || [])];
 
     let leagueName = dataToday.leagues?.[0]?.name ?? 'Liga Desconocida';
     if (leagueName === 'Argentine Liga Profesional de Fútbol') {
