@@ -198,7 +198,7 @@
   "entrenador": "Lucas Bernardi"
 },
 {
-  "club_nombre": "Unión de Santa Fe",
+  "club_nombre": "Unión (Santa Fe)",
   "titulosNacionales": 0,
   "titulosInternac": 0,
   "nombreEstadio": "15 de Abril",
@@ -209,7 +209,7 @@
   "entrenador": "Leonardo Madelón"
 },
 {
-  "club_nombre": "Talleres de Córdoba",
+  "club_nombre": "Talleres (Córdoba)",
   "titulosNacionales": 1,
   "titulosInternac": 1,
   "nombreEstadio": "Mario Alberto Kempes",
@@ -220,7 +220,7 @@
   "entrenador": "Carlos Tevez"
 },
 {
-  "club_nombre": "Belgrano",
+  "club_nombre": "Belgrano (Córdoba)",
   "titulosNacionales": 0,
   "titulosInternac": 0,
   "nombreEstadio": "Julio César Villagra (Gigante de Alberdi)",
@@ -231,7 +231,7 @@
   "entrenador": "Ricardo Zielinski"
 },
 {
-  "club_nombre": "Godoy Cruz",
+  "club_nombre": "Godoy Cruz Antonio Tomba",
   "titulosNacionales": 0,
   "titulosInternac": 0,
   "nombreEstadio": "Malvinas Argentinas",
@@ -253,7 +253,7 @@
   "entrenador": "Lucas Pusineri"
 },
 {
-  "club_nombre": "Central Córdoba",
+  "club_nombre": "Central Córdoba (Santiago del Estero)",
   "titulosNacionales": 1,
   "titulosInternac": 0,
   "nombreEstadio": "Único Madre de Ciudades",
@@ -275,7 +275,7 @@
   "entrenador": "Rubén Darío Insúa"
 },
 {
-  "club_nombre": "Sarmiento Junín",
+  "club_nombre": "Sarmiento (Junín)",
   "titulosNacionales": 0,
   "titulosInternac": 0,
   "nombreEstadio": "Eva Perón",
@@ -286,7 +286,7 @@
   "entrenador": "Facundo Sava"
 },
 {
-  "club_nombre": "Instituto",
+  "club_nombre": "Instituto (Córdoba)",
   "titulosNacionales": 0,
   "titulosInternac": 0,
   "nombreEstadio": "Juan Domingo Perón (Alta Córdoba)",
@@ -319,7 +319,7 @@
     "entrenador": "Alfredo Berti"
     },
   {
-    "club_nombre": "San Martín (SJ)",
+    "club_nombre": "San Martín (San Juan)",
     "titulosNacionales": 0,
     "titulosInternac": 0,
     "nombreEstadio": "Ingeniero Hilario Sánchez",
@@ -550,6 +550,227 @@
   "colores": "Rojo y Blanco",
   "añoFundacion": 1879,
   "entrenador": "Michael Beale"
-}
+},
+
+{
+    "club_nombre": "Alavés",
+    "titulosNacionales": 0,
+    "titulosInternac": 0,
+    "nombreEstadio": "Mendizorroza",
+    "capacidadEstadio": 19840,
+    "ciudad": "Vitoria-Gasteiz",
+    "colores": "Azul y Blanco",
+    "añoFundacion": 1921,
+    "entrenador": "Luis García Plaza"
+  },
+  {
+    "club_nombre": "Athletic Club",
+    "titulosNacionales": 36,
+    "titulosInternac": 0,
+    "nombreEstadio": "San Mamés",
+    "capacidadEstadio": 53289,
+    "ciudad": "Bilbao",
+    "colores": "Rojo y Blanco",
+    "añoFundacion": 1898,
+    "entrenador": "Ernesto Valverde"
+  },
+  {
+    "club_nombre": "Atlético Madrid",
+    "titulosNacionales": 25,
+    "titulosInternac": 8,
+    "nombreEstadio": "Cívitas Metropolitano",
+    "capacidadEstadio": 70460,
+    "ciudad": "Madrid",
+    "colores": "Rojo y Blanco",
+    "añoFundacion": 1903,
+    "entrenador": "Diego Simeone"
+  },
+  {
+    "club_nombre": "Barcelona",
+    "titulosNacionales": 77,
+    "titulosInternac": 20,
+    "nombreEstadio": "Spotify Camp Nou",
+    "capacidadEstadio": 99354,
+    "ciudad": "Barcelona",
+    "colores": "Azul y Granate",
+    "añoFundacion": 1899,
+    "entrenador": "Hansi Flick"
+  },
+  {
+    "club_nombre": "Celta Vigo",
+    "titulosNacionales": 0,
+    "titulosInternac": 1,
+    "nombreEstadio": "Abanca-Balaídos",
+    "capacidadEstadio": 29000,
+    "ciudad": "Vigo",
+    "colores": "Celeste y Blanco",
+    "añoFundacion": 1923,
+    "entrenador": "Claudio Giráldez"
+  },
+  {
+    "club_nombre": "Espanyol",
+    "titulosNacionales": 4,
+    "titulosInternac": 0,
+    "nombreEstadio": "Stage Front Stadium",
+    "capacidadEstadio": 40000,
+    "ciudad": "Cornellà de Llobregat",
+    "colores": "Azul y Blanco",
+    "añoFundacion": 1900,
+    "entrenador": "Manolo González"
+  },
+  {
+    "club_nombre": "Getafe",
+    "titulosNacionales": 0,
+    "titulosInternac": 0,
+    "nombreEstadio": "Coliseum",
+    "capacidadEstadio": 17393,
+    "ciudad": "Getafe",
+    "colores": "Azul",
+    "añoFundacion": 1983,
+    "entrenador": "José Bordalás"
+  },
+  {
+    "club_nombre": "Girona",
+    "titulosNacionales": 0,
+    "titulosInternac": 0,
+    "nombreEstadio": "Montilivi",
+    "capacidadEstadio": 14624,
+    "ciudad": "Girona",
+    "colores": "Rojo y Blanco",
+    "añoFundacion": 1930,
+    "entrenador": "Míchel"
+  },
+  {
+    "club_nombre": "Real Oviedo",
+    "titulosNacionales": 0,
+    "titulosInternac": 0,
+    "nombreEstadio": "Estadio Carlos Tartiere",
+    "capacidadEstadio": 30500,
+    "ciudad": "Oviedo",
+    "colores": "Azul y Blanco",
+    "añoFundacion": 1926,
+    "entrenador": "Luis Carrión"
+  },
+  {
+    "club_nombre": "Levante",
+    "titulosNacionales": 1,
+    "titulosInternac": 0,
+    "nombreEstadio": "Estadi Ciutat de València",
+    "capacidadEstadio": 26354,
+    "ciudad": "Valencia",
+    "colores": "Azul y Granate",
+    "añoFundacion": 1909,
+    "entrenador": "Julián Calero"
+  },
+  {
+    "club_nombre": "Mallorca",
+    "titulosNacionales": 2,
+    "titulosInternac": 0,
+    "nombreEstadio": "Estadi Mallorca Son Moix",
+    "capacidadEstadio": 23142,
+    "ciudad": "Palma de Mallorca",
+    "colores": "Rojo y Negro",
+    "añoFundacion": 1916,
+    "entrenador": "Jagoba Arrasate"
+  },
+  {
+    "club_nombre": "Osasuna",
+    "titulosNacionales": 0,
+    "titulosInternac": 0,
+    "nombreEstadio": "El Sadar",
+    "capacidadEstadio": 23576,
+    "ciudad": "Pamplona",
+    "colores": "Rojo y Azul",
+    "añoFundacion": 1920,
+    "entrenador": "Vicente Moreno"
+  },
+  {
+    "club_nombre": "Rayo Vallecano",
+    "titulosNacionales": 0,
+    "titulosInternac": 0,
+    "nombreEstadio": "Estadio de Vallecas",
+    "capacidadEstadio": 14708,
+    "ciudad": "Madrid",
+    "colores": "Blanco y Rojo",
+    "añoFundacion": 1924,
+    "entrenador": "Iñigo Pérez"
+  },
+  {
+    "club_nombre": "Real Betis",
+    "titulosNacionales": 4,
+    "titulosInternac": 0,
+    "nombreEstadio": "Benito Villamarín",
+    "capacidadEstadio": 60721,
+    "ciudad": "Sevilla",
+    "colores": "Verde y Blanco",
+    "añoFundacion": 1907,
+    "entrenador": "Manuel Pellegrini"
+  },
+  {
+    "club_nombre": "Real Madrid",
+    "titulosNacionales": 71,
+    "titulosInternac": 30,
+    "nombreEstadio": "Santiago Bernabéu",
+    "capacidadEstadio": 81044,
+    "ciudad": "Madrid",
+    "colores": "Blanco",
+    "añoFundacion": 1902,
+    "entrenador": "Carlo Ancelotti"
+  },
+  {
+    "club_nombre": "Real Sociedad",
+    "titulosNacionales": 6,
+    "titulosInternac": 0,
+    "nombreEstadio": "Reale Arena",
+    "capacidadEstadio": 39500,
+    "ciudad": "San Sebastián",
+    "colores": "Azul y Blanco",
+    "añoFundacion": 1909,
+    "entrenador": "Imanol Alguacil"
+  },
+  {
+    "club_nombre": "Elche",
+    "titulosNacionales": 0,
+    "titulosInternac": 0,
+    "nombreEstadio": "Estadio Manuel Martínez Valero",
+    "capacidadEstadio": 31388,
+    "ciudad": "Elche",
+    "colores": "Blanco y Verde",
+    "añoFundacion": 1923,
+    "entrenador": "Eder Sarabia"
+  },
+  {
+    "club_nombre": "Sevilla",
+    "titulosNacionales": 7,
+    "titulosInternac": 8,
+    "nombreEstadio": "Ramón Sánchez-Pizjuán",
+    "capacidadEstadio": 43883,
+    "ciudad": "Sevilla",
+    "colores": "Blanco y Rojo",
+    "añoFundacion": 1890,
+    "entrenador": "García Pimienta"
+  },
+  {
+    "club_nombre": "Valencia",
+    "titulosNacionales": 16,
+    "titulosInternac": 7,
+    "nombreEstadio": "Mestalla",
+    "capacidadEstadio": 49430,
+    "ciudad": "Valencia",
+    "colores": "Blanco y Negro",
+    "añoFundacion": 1919,
+    "entrenador": "Rubén Baraja"
+  },
+  {
+    "club_nombre": "Villarreal",
+    "titulosNacionales": 0,
+    "titulosInternac": 2,
+    "nombreEstadio": "Estadio de la Cerámica",
+    "capacidadEstadio": 23500,
+    "ciudad": "Villarreal",
+    "colores": "Amarillo",
+    "añoFundacion": 1923,
+    "entrenador": "Marcelino"
+  }
 
 ]

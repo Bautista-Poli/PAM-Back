@@ -398,6 +398,168 @@
     "crest_url": "https://paladarnegro.net/escudoteca/inglaterra/premier/png/wolverhampton.png",
     "pais": "inglaterra",
     "pais_key": "inglaterra"
+  },
+
+  {
+    "league_key": "la_liga",
+    "name": "Alavés",
+    "name_norm": "alaves",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/alaves.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Athletic Club",
+    "name_norm": "athletic",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/athletic.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Atlético Madrid",
+    "name_norm": "atleticodemadrid",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/atlmadrid.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Barcelona",
+    "name_norm": "barcelona",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/barcelona.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Celta Vigo",
+    "name_norm": "celtadevigo",
+    "crest_url": "https://rccelta.es/app/uploads/2020/06/celta-horizontal.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Espanyol",
+    "name_norm": "espanyol",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/espanyol.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Getafe",
+    "name_norm": "getafe",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/getafe.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Girona",
+    "name_norm": "girona",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/girona.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Real Oviedo",
+    "name_norm": "realoviedo",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/realoviedo.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Levante",
+    "name_norm": "levante",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/levante.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Mallorca",
+    "name_norm": "mallorca",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/mallorca.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Osasuna",
+    "name_norm": "osasuna",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/osasuna.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Rayo Vallecano",
+    "name_norm": "rayovallecano",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/rayovallecano.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Real Betis",
+    "name_norm": "betis",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/betis.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Real Madrid",
+    "name_norm": "realmadrid",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/realmadrid.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Real Sociedad",
+    "name_norm": "realsociedad",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/realsociedad.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Elche",
+    "name_norm": "elche",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/elche.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Sevilla",
+    "name_norm": "sevilla",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/sevilla.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Valencia",
+    "name_norm": "valencia",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/valencia.png",
+    "pais": "españa",
+    "pais_key": "españa"
+  },
+  {
+    "league_key": "la_liga",
+    "name": "Villarreal",
+    "name_norm": "villarreal",
+    "crest_url": "https://paladarnegro.net/escudoteca/espana/laliga/png/villarreal.png",
+    "pais": "españa",
+    "pais_key": "españa"
   }
+
 
 ]
