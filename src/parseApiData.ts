@@ -1,5 +1,5 @@
-import { match_row, PrismaClient } from '@prisma/client'
-import { ApiResponse, Team, Competitor, Competition, Event, League } from './apiInterfaces';
+import { PrismaClient } from '@prisma/client'
+import { ApiResponse } from './apiInterfaces';
 const prisma = new PrismaClient();
 
 function checkApiResponseType(apiResponse: any) {
