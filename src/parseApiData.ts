@@ -45,7 +45,7 @@ async function main() {
         throw new Error("Invalid Response, incorrect datatype")
     }
 
-    // Combinar eventos de hoy y ayer
+    // Combinar eventos de hoy, ayer y mañana
     const allEvents = [...(dataToday.events || []), ...(dataYesterday.events || []), ...(dataTomorrow.events || [])];
 
     let leagueName = dataToday.leagues?.[0]?.name ?? 'Liga Desconocida';
