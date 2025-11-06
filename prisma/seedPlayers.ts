@@ -38,10 +38,10 @@ function vieneConId(p: RawPlayer, toInsert: PlayerById[]): boolean {
 
 
 async function main() {
-  console.log('🧹 Borrando jugadores existentes...');
-  await prisma.player_table.deleteMany();
+  //console.log('🧹 Borrando jugadores existentes...');
+  //await prisma.player_table.deleteMany();
 
-  const filePath = path.join(__dirname, '../data/player_table.json');
+  const filePath = path.join(__dirname, '../data/player_table2.json');
   const raw = JSON.parse(await fs.readFile(filePath, 'utf-8')) as RawPlayer[];
 
   const toInsert: { full_name: string; team_id: number }[] = [];
@@ -56,7 +56,7 @@ async function main() {
   console.log(`📦 Insertando ${toInsert.length} jugadores...`);
   const res = await prisma.player_table.createMany({
     data: toInsert,
-    skipDuplicates: true, // por si a futuro agregás una UNIQUE
+    skipDuplicates: true,
   });
 
   console.log(`✅ Insertados: ${res.count}`);
