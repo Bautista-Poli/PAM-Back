@@ -1,22 +1,22 @@
 import { PrismaClient } from '@prisma/client'
-import { ApiResponse } from './apiInterfaces';
+import { ApiMatchesResponse, Event } from './apiMatchesInterfaces';
 
 interface leagueUrlAndName {url: string; name: string};
 
-function checkApiResponseType(apiResponse: any) {
-    return (apiResponse && Array.isArray(apiResponse.events) && Array.isArray(apiResponse.leagues))
+function checkApiResponseType(ApiMatchesResponse: any) {
+    return (ApiMatchesResponse && Array.isArray(ApiMatchesResponse.events) && Array.isArray(ApiMatchesResponse.leagues))
 }
 
 export async function updateMatches(leagueData: leagueUrlAndName, prisma: PrismaClient) {
 
-    const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/'+leagueData.url;
+    const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/'+leagueData.url+'/scoreboard';
     
     // Obtener partidos de hoy
     const responseToday = await fetch(espnApiUrl);
     if (!responseToday.ok) {
-        throw new Error(`Failed to fetch data: ${responseToday.statusText}`);
+        throw new Error(`Failed to fetch data from matches: ${responseToday.statusText}`);
     }
-    const dataToday = await responseToday.json() as ApiResponse;
+    const dataToday = await responseToday.json() as ApiMatchesResponse;
 
     // Obtener partidos de ayer
     const yesterday = new Date();
@@ -28,7 +28,7 @@ export async function updateMatches(leagueData: leagueUrlAndName, prisma: Prisma
     if (!responseYesterday.ok) {
         throw new Error(`Failed to fetch yesterday data: ${responseYesterday.statusText}`);
     }
-    const dataYesterday = await responseYesterday.json() as ApiResponse;
+    const dataYesterday = await responseYesterday.json() as ApiMatchesResponse;
 
     // Obtener partidos de mañana
     const tomorrow = new Date();
@@ -40,10 +40,10 @@ export async function updateMatches(leagueData: leagueUrlAndName, prisma: Prisma
     if (!responseTomorrow.ok) {
         throw new Error(`Failed to fetch yesterday data: ${responseTomorrow.statusText}`);
     }
-    const dataTomorrow = await responseTomorrow.json() as ApiResponse;
+    const dataTomorrow = await responseTomorrow.json() as ApiMatchesResponse;
 
     if (!checkApiResponseType(dataToday) || !checkApiResponseType(dataYesterday) || !checkApiResponseType(dataTomorrow)) {
-        throw new Error("Invalid Response, incorrect datatype")
+        throw new Error("Invalid Response, incorrect datatype for matches")
     }
 
     // Combinar eventos de hoy, ayer y mañana
@@ -62,8 +62,7 @@ export async function updateMatches(leagueData: leagueUrlAndName, prisma: Prisma
     for (const c of clubs) clubIdByKey.set(key(c.league_key, c.nombre), c.id);
 
 
-
-    const matches = allEvents.map((event: any) => {
+    const matches = allEvents.map((event: Event) => {
         const homeTeamName = event.competitions[0].competitors[0].team.displayName;
         const awayTeamName = event.competitions[0].competitors[1].team.displayName;
         const homeId = clubIdByKey.get(key(leagueName, homeTeamName));
@@ -88,6 +87,7 @@ export async function updateMatches(leagueData: leagueUrlAndName, prisma: Prisma
         };
     });
 
+    
     console.log(matches);
     await prisma.match_row.createMany({ data: matches, skipDuplicates: true });
 }

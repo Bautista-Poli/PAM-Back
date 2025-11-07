@@ -1,3 +1,5 @@
+// Interfaces para los partidos de espn 
+
 export interface Team {
   id: string;
   uid: string;
@@ -178,7 +180,7 @@ export interface League {
   calendar: string[];
 }
 
-export interface ApiResponse {
+export interface ApiMatchesResponse {
   leagues: League[];
   season: { type: number; year: number };
   day: { date: string };
