@@ -1,14 +1,14 @@
 import { PrismaClient } from '@prisma/client'
 import { ApiResponse } from './apiInterfaces';
-const prisma = new PrismaClient();
+
 
 function checkApiResponseType(apiResponse: any) {
     return (apiResponse && Array.isArray(apiResponse.events) && Array.isArray(apiResponse.leagues))
 }
 
-async function main() {
+export async function updateMatches(leagueUrl: String, prisma: PrismaClient) {
 
-    const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/arg.1/scoreboard';
+    const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/'+leagueUrl;
     
     // Obtener partidos de hoy
     const responseToday = await fetch(espnApiUrl);
@@ -63,7 +63,7 @@ async function main() {
     const clubIdByKey = new Map<string, number>();
     for (const c of clubs) clubIdByKey.set(key(c.league_key, c.nombre), c.id);
 
-    await prisma.match_row.deleteMany();
+    //await prisma.match_row.deleteMany();
 
     const matches = allEvents.map((event: any) => {
         const homeTeamName = event.competitions[0].competitors[0].team.displayName;
@@ -94,11 +94,3 @@ async function main() {
     await prisma.match_row.createMany({ data: matches, skipDuplicates: true });
 }
 
-main()
-    .catch((e) => {
-        console.error('âŒ Error en el seed:', e);
-        process.exit(1);
-    })
-    .finally(async () => {
-        await prisma.$disconnect();
-    });
