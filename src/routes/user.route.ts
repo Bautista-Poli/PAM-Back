@@ -1,8 +1,35 @@
 import { Router } from 'express';
 import { checkUserCredentialsController } from '../controllers/check.user.controller';
 import { createUserController } from '../controllers/create.user.controller';
+import { PrismaClient } from '@prisma/client';
 
 const router = Router();
+const prisma = new PrismaClient();
+
+router.get('/clubs', async (req, res) => {
+  try {
+    const clubs = await prisma.club.findMany({
+      where: {
+        league_key: 'liga_profesional_argentina'
+      },
+      orderBy: {
+        nombre: 'asc'
+      },
+      select: {
+        id: true,
+        nombre: true,
+        crest_url: true
+      }
+    });
+
+    return res.status(200).json(clubs);
+  } catch (error) {
+    console.error('Error al obtener clubes:', error);
+    return res.status(500).json({
+      error: 'Error al obtener los clubes'
+    });
+  }
+});
 
 router.post('/', async (req, res) => {
   const { mail, contrasena } = req.body;
@@ -23,8 +50,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-
-// POST /user/create
 router.post("/create", async (req, res) => {
   const { nombre, mail, contrasena, clubId } = req.body ?? {};
 
