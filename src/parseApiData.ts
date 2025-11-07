@@ -1,14 +1,15 @@
 import { PrismaClient } from '@prisma/client'
 import { ApiResponse } from './apiInterfaces';
 
+interface leagueUrlAndName {url: string; name: string};
 
 function checkApiResponseType(apiResponse: any) {
     return (apiResponse && Array.isArray(apiResponse.events) && Array.isArray(apiResponse.leagues))
 }
 
-export async function updateMatches(leagueUrl: String, prisma: PrismaClient) {
+export async function updateMatches(leagueData: leagueUrlAndName, prisma: PrismaClient) {
 
-    const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/'+leagueUrl;
+    const espnApiUrl = 'https://site.web.api.espn.com/apis/site/v2/sports/soccer/'+leagueData.url;
     
     // Obtener partidos de hoy
     const responseToday = await fetch(espnApiUrl);
@@ -48,11 +49,8 @@ export async function updateMatches(leagueUrl: String, prisma: PrismaClient) {
     // Combinar eventos de hoy, ayer y mañana
     const allEvents = [...(dataToday.events || []), ...(dataYesterday.events || []), ...(dataTomorrow.events || [])];
 
-    let leagueName = dataToday.leagues?.[0]?.name ?? 'Liga Desconocida';
-    if (leagueName === 'Argentine Liga Profesional de Fútbol') {
-        leagueName = 'Liga Profesional Argentina';
-    }
-
+    let leagueName = leagueData.name ?? 'Liga Desconocida';
+    
     const key = (league: string, name: string) =>
         `${(league ?? '').trim().toLowerCase()}|${(name ?? '').trim().toLowerCase()}`;
 
@@ -63,7 +61,7 @@ export async function updateMatches(leagueUrl: String, prisma: PrismaClient) {
     const clubIdByKey = new Map<string, number>();
     for (const c of clubs) clubIdByKey.set(key(c.league_key, c.nombre), c.id);
 
-    //await prisma.match_row.deleteMany();
+
 
     const matches = allEvents.map((event: any) => {
         const homeTeamName = event.competitions[0].competitors[0].team.displayName;

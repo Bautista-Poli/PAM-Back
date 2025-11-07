@@ -3,7 +3,11 @@ import  {updateMatches} from "./parseApiData";
 
 
 function main(){
-    const leagueUrls = ['arg.1/scoreboard','eng.1/scoreboard','esp.1/scoreboard']
+    const leagueUrls = [
+        {url:'arg.1/scoreboard',name:'Liga Profesional Argentina'},
+        {url:'eng.1/scoreboard',name:'Premier League'},
+        {url:'esp.1/scoreboard',name:'La Liga'}
+    ]
 
     for (let i=0; i<leagueUrls.length; i++){
         const prisma = new PrismaClient();
