@@ -54,3 +54,4 @@ export async function updateTable(leagueData: Array<leagueUrlAndName>, prisma: P
     
 }
 
+

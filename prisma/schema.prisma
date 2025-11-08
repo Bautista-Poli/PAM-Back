@@ -1,6 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
-  binaryTargets = ["native","windows"]
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "windows"]
 }
 
 datasource db {
@@ -9,42 +9,37 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-
 model club {
-  id          Int            @id @default(autoincrement())
-  league_key  String         @default("global")
-  nombre      String
-  crest_url   String
+  id           Int            @id @default(autoincrement())
+  league_key   String         @default("global")
+  nombre       String
+  crest_url    String
+  clubInfo     Club_Info?
+  away_matches match_row[]    @relation("AwayClub")
+  home_matches match_row[]    @relation("HomeClub")
+  players      player_table[]
+  users        user_table[]
 
-  clubInfo Club_Info?
-
-  players     player_table[]
-  users       user_table[]
-
-  home_matches match_row[]   @relation("HomeClub")
-  away_matches match_row[]   @relation("AwayClub")
-
-  @@index([league_key])
   @@unique([league_key, nombre])
+  @@index([league_key])
 }
 
 model Club_Info {
-  id                   Int      @id @default(autoincrement())  //PK
-  clubId               Int      @unique  //FK
-  club                 club     @relation(fields: [clubId], references: [id])
-
-  titulosNacionales    Int      @default(0)
-  titulosInternac      Int      @default(0)
-  añoFundacion         Int
-  nombreEstadio        String   @db.VarChar(100)
-  capacidadEstadio     Int
-  ciudad               String   @db.VarChar(50)
-  colores              String   @db.VarChar(100)
-  entrenador           String   @db.VarChar(100)
+  id                Int    @id @default(autoincrement())
+  clubId            Int    @unique
+  titulosNacionales Int    @default(0)
+  titulosInternac   Int    @default(0)
+  añoFundacion     Int
+  nombreEstadio     String @db.VarChar(100)
+  capacidadEstadio  Int
+  ciudad            String @db.VarChar(50)
+  colores           String @db.VarChar(100)
+  entrenador        String @db.VarChar(100)
+  club              club   @relation(fields: [clubId], references: [id])
 }
 
 model league_table_row {
-  id            Int   @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
   league_preset String
   table_index   Int      @default(1)
   table_title   String?
@@ -54,77 +49,65 @@ model league_table_row {
   wins          Int?
   draws         Int?
   losses        Int?
-  gf            Int  @default(0)
-  ga            Int  @default(0)
+  gf            Int      @default(0)
+  ga            Int      @default(0)
   updated_at    DateTime @default(now()) @db.Timestamptz(6)
+
 
   @@unique([league_preset, table_index, team])
 }
 
 model match_row {
-  id           Int       @id @default(autoincrement())
   league       String
-  match_date   DateTime? @default(now()) @db.Timestamptz(6)
-  minute       Int?
-  score_home   Int?
-  score_away   Int?
-  updated_at   DateTime? @default(now()) @db.Timestamptz(6)
-
-  // Campos viejos (necesarios para el backfill)
   home_team    String
   away_team    String
-
-  // Nuevas FKs OPCIONALES
-  home_club_id Int?
+  score_home   Int?
+  score_away   Int?
+  minute       Int?
+  updated_at   DateTime?       @default(now()) @db.Timestamptz(6)
+  match_date   DateTime?       @default(now()) @db.Timestamptz(6)
   away_club_id Int?
-  home_club    club?     @relation("HomeClub", fields: [home_club_id], references: [id])
-  away_club    club?     @relation("AwayClub", fields: [away_club_id], references: [id])
-
-  ratings     player_rating[]
+  home_club_id Int?
+  id           Int             @id @default(autoincrement())
+  away_club    club?           @relation("AwayClub", fields: [away_club_id], references: [id])
+  home_club    club?           @relation("HomeClub", fields: [home_club_id], references: [id])
+  ratings      player_rating[]
 
   @@index([home_club_id])
   @@index([away_club_id])
 }
 
-
 model user_table {
-  id          Int      @id @default(autoincrement())
-  usuario     String   @unique
-  mail        String   @unique
-  club_id     Int
-  contrasena  String
-
-  // Relación con el club
-  club        club     @relation(fields: [club_id], references: [id])
-
-  ratings     player_rating[]
+  id         Int             @id @default(autoincrement())
+  usuario    String          @unique
+  mail       String          @unique
+  club_id    Int
+  contrasena String
+  ratings    player_rating[]
+  club       club            @relation(fields: [club_id], references: [id])
 }
 
 model player_table {
-  id         Int     @id @default(autoincrement())
-  full_name  String
-  team_id    Int
-  team       club    @relation(fields: [team_id], references: [id]) // ← apunta a `club`
-
-  ratings     player_rating[]
+  id        Int             @id @default(autoincrement())
+  full_name String
+  team_id   Int
+  ratings   player_rating[]
+  team      club            @relation(fields: [team_id], references: [id])
 
   @@index([team_id])
 }
 
 model player_rating {
-  id          Int      @id @default(autoincrement())
-  user_id     Int
-  match_id    Int
-  player_id   Int
-  rating      Int      // 1-5 estrellas
-  created_at  DateTime @default(now()) @db.Timestamptz(6)
+  id         Int          @id @default(autoincrement())
+  user_id    Int
+  match_id   Int
+  player_id  Int
+  rating     Int
+  created_at DateTime     @default(now()) @db.Timestamptz(6)
+  match      match_row    @relation(fields: [match_id], references: [id])
+  player     player_table @relation(fields: [player_id], references: [id])
+  user       user_table   @relation(fields: [user_id], references: [id])
 
-  // Relaciones
-  user        user_table   @relation(fields: [user_id], references: [id])
-  match       match_row    @relation(fields: [match_id], references: [id])
-  player      player_table @relation(fields: [player_id], references: [id])
-
-  // Un usuario solo puede votar una vez por jugador en cada partido
   @@unique([user_id, match_id, player_id])
   @@index([player_id])
   @@index([match_id])

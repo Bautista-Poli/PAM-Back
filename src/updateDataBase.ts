@@ -23,6 +23,17 @@ function main(){
 
     }
     for (let i=0; i<leagueUrls.length; i++){
+        const prisma = new PrismaClient();
+        updateTable(leagueUrls,prisma)
+            .catch((e) => {
+                console.error('Error en el seed:', e);
+                process.exit(1);
+            })
+            .finally(async () => {
+                await prisma.$disconnect();
+            });
+    }
+            
     const prisma = new PrismaClient();
     updateTable(leagueUrls,prisma)
         .catch((e) => {
@@ -32,9 +43,7 @@ function main(){
         .finally(async () => {
             await prisma.$disconnect();
         });
-    }
-            
-
+    
 }
 
 main();
