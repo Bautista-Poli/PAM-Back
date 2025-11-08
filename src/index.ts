@@ -4,6 +4,7 @@ import playerRouter from './routes/player.route';
 import clubRouter from './routes/club.route'
 import userRouter from './routes/user.route'
 import ratingRouter from './routes/rating.route'
+import leagueTableRouter from './routes/table.route' 
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use("/players", playerRouter);
 app.use("/clubs", clubRouter);
 app.use("/user", userRouter);
 app.use("/ratings", ratingRouter);
+app.use("/league-table",leagueTableRouter);
 
 //app.use("/table", matchRowRouter);
 
