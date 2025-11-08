@@ -1,7 +1,7 @@
+import { PrismaClient } from '@prisma/client';
 import { Router } from 'express';
 import { checkUserCredentialsController } from '../controllers/check.user.controller';
 import { createUserController } from '../controllers/create.user.controller';
-import { PrismaClient } from '@prisma/client';
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -10,7 +10,7 @@ router.get('/clubs', async (req, res) => {
   try {
     const clubs = await prisma.club.findMany({
       where: {
-        league_key: 'liga_profesional_argentina'
+        league_key: 'Liga Profesional Argentina'
       },
       orderBy: {
         nombre: 'asc'
