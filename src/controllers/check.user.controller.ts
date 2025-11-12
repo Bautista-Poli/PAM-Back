@@ -21,5 +21,5 @@ export async function checkUserCredentialsController(mail: string, contrasena: s
     }
   });
 
-  return user; // null si no coincide
+  return user;
 }

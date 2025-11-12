@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { Router } from 'express';
+import { createHash } from 'crypto'
 import { checkUserCredentialsController } from '../controllers/check.user.controller';
 import { createUserController } from '../controllers/create.user.controller';
 
@@ -39,7 +40,8 @@ router.post('/', async (req, res) => {
   }
 
   try {
-    const user = await checkUserCredentialsController(mail, contrasena);
+    const contrasenaHasheada = createHash('sha256').update(contrasena).digest('hex')
+    const user = await checkUserCredentialsController(mail, contrasenaHasheada);
     if (!user) {
       return res.status(401).json({ error: 'Credenciales inválidas' });
     }
@@ -61,7 +63,8 @@ router.post("/create", async (req, res) => {
   }
 
   try {
-    const user = await createUserController({ nombre, mail, contrasena, clubId });
+    const contrasenaHasheada = createHash('sha256').update(contrasena).digest('hex')
+    const user = await createUserController({ nombre, mail, contrasena:contrasenaHasheada, clubId });
     return res.status(201).json(user);
   } catch (err: any) {
     // Prisma unique constraint
