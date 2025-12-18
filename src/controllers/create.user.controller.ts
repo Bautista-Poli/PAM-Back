@@ -16,9 +16,9 @@ export async function createUserController({
 }: CreateUserInput) {
   const user = await prisma.user_table.create({
     data: {
-      usuario: nombre,       // map nombre -> usuario
+      usuario: nombre,
       mail,
-      contrasena,            // si luego querés hash, acá va el hash
+      contrasena,
       club_id: clubId,
     },
     select: {

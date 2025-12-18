@@ -14,6 +14,7 @@ export async function checkUserCredentialsController(mail: string, contrasena: s
       club_id: true,
       club: {
         select: {
+          id: true,
           nombre: true,
           crest_url: true
         }

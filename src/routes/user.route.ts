@@ -3,6 +3,7 @@ import { Router } from 'express';
 import { createHash } from 'crypto'
 import { checkUserCredentialsController } from '../controllers/check.user.controller';
 import { createUserController } from '../controllers/create.user.controller';
+import { updateUserController } from '../controllers/update.user.controller';
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -80,6 +81,35 @@ router.post("/create", async (req, res) => {
     }
 
     console.error("Error /user/create:", err);
+    return res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
+router.put("/:userId", async (req, res) => {
+  const userId = parseInt(req.params.userId);
+  const { nombre, clubId } = req.body ?? {};
+
+  if (isNaN(userId)) {
+    return res.status(400).json({ error: "userId inválido" });
+  }
+
+  if (!nombre && !clubId) {
+    return res.status(400).json({ error: "Debe proporcionar al menos un campo para actualizar (nombre o clubId)" });
+  }
+
+  try {
+    const updatedUser = await updateUserController(userId, { nombre, clubId });
+    return res.status(200).json(updatedUser);
+  } catch (err: any) {
+    if (err?.code === "P2025") {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    if (err?.code === "P2003") {
+      return res.status(400).json({ error: "clubId inválido (no existe el club)" });
+    }
+
+    console.error("Error /user/update:", err);
     return res.status(500).json({ error: "Error interno del servidor" });
   }
 });
