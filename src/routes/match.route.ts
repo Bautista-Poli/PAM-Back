@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { getAllMatchesController } from "../controllers/get.matches.controller";
 import { getMatchesByDateController } from "../controllers/get.specificMatch.controller";
+import { getMatchEventsController } from "../controllers/get.matchInfo.controller";
 
 const router = Router();
 
@@ -26,6 +27,20 @@ router.get('/by-date', async (req, res) => {
   } catch (error) {
     console.error('Error al obtener partidos por fecha:', error);
     return res.status(500).json({ error: 'Hubo un error al obtener los partidos.' });
+  }
+});
+
+
+router.get('/:id/events', async (req, res) => {
+  const { id } = req.params;
+  console.log("Solicitando eventos para ID:", id); // LOG DE DEBUG
+
+  try {
+    const events = await getMatchEventsController(Number(id));
+    return res.status(200).json(events);
+  } catch (error) {
+    console.error('ERROR REAL EN EL BACKEND:', error); // ESTO TE DIRÁ EL PROBLEMA
+    return res.status(500).json({ error: String(error) });
   }
 });
 

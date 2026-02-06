@@ -35,11 +35,11 @@ model Club_Info {
   ciudad            String @db.VarChar(50)
   colores           String @db.VarChar(100)
   entrenador        String @db.VarChar(100)
-  club              club   @relation(fields: [clubId], references: [id])
+  club              club   @relation(fields: [clubId], references: [id], onDelete: Cascade)
 }
 
 model league_table_row {
-  id            Int      @id @default(autoincrement())
+  id            BigInt      @id @default(autoincrement())
   league_preset String
   table_index   Int      @default(1)
   table_title   String?
@@ -55,6 +55,12 @@ model league_table_row {
 
 
   @@unique([league_preset, table_index, team])
+}
+enum match_event_type {
+  YELLOW_CARD
+  RED_CARD
+  GOAL
+  SUBSTITUTION
 }
 
 model match_row {
@@ -72,9 +78,30 @@ model match_row {
   away_club    club?           @relation("AwayClub", fields: [away_club_id], references: [id])
   home_club    club?           @relation("HomeClub", fields: [home_club_id], references: [id])
   ratings      player_rating[]
+  espn_id       String?         @unique
 
   @@index([home_club_id])
   @@index([away_club_id])
+  @@unique([home_team, away_team, match_date])
+}
+
+
+model match_event {
+  id              Int      @id @default(autoincrement())
+  match_id        Int
+  espn_id         String?
+  
+  type            String   // "yellow-card", "red-card", etc.
+  minute          Int?
+  clock_display   String?
+  description     String?
+  
+  team_name       String?
+  player_name     String?
+
+  @@index([match_id])
+  @@index([espn_id])
+  @@unique([match_id, type, minute,player_name]) 
 }
 
 model user_table {
@@ -100,11 +127,11 @@ model player_table {
 model player_rating {
   id         Int          @id @default(autoincrement())
   user_id    Int
-  match_id   Int
+  match_id   Int?
   player_id  Int
   rating     Int
   created_at DateTime     @default(now()) @db.Timestamptz(6)
-  match      match_row    @relation(fields: [match_id], references: [id])
+  match     match_row? @relation(fields: [match_id], references: [id], onDelete: SetNull)
   player     player_table @relation(fields: [player_id], references: [id])
   user       user_table   @relation(fields: [user_id], references: [id])
 

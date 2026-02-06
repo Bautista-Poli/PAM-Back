@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node src/index.ts",
+    "devs": "ts-node --transpile-only src/index.ts",
     "prisma:generate": "prisma generate",
     "api": "ts-node src/parseAPiData",
     "seed": "ts-node prisma/seed.ts"
