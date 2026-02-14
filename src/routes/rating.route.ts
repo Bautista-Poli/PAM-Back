@@ -4,6 +4,7 @@ import { checkUserVotedController } from "../controllers/check.userVoted.control
 import { getAverageRatingsByClubController } from "../controllers/get.averageRatings.controller";
 import { getUserMatchRatingsController } from "../controllers/get.userMatchRatings.controller";
 import { updateRatingsController } from "../controllers/uptade.ratings.contoller";
+import { getPlayerHistoryController } from "../controllers/get.playerHistoryRating.controller";
 
 const router = Router();
 
@@ -107,6 +108,21 @@ router.get("/user-match", async (req, res) => {
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Error al obtener tus votos" });
+  }
+});
+
+router.get("/player/:playerId", async (req, res) => {
+  try {
+    const playerId = parseInt(req.params.playerId);
+    if (isNaN(playerId)) {
+      return res.status(400).json({ error: "ID de jugador inválido" });
+    }
+
+    const history = await getPlayerHistoryController(playerId);
+    return res.json(history);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Error al obtener el historial del jugador" });
   }
 });
 

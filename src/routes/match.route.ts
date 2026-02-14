@@ -2,6 +2,8 @@ import { Router } from "express";
 import { getAllMatchesController } from "../controllers/get.matches.controller";
 import { getMatchesByDateController } from "../controllers/get.specificMatch.controller";
 import { getMatchEventsController } from "../controllers/get.matchInfo.controller";
+import { getMatchesByTeamController } from "../controllers/get.teamMatches.controller";
+import { getTournamentMatchesController } from "../controllers/get.tournamentMatches.controller";
 
 const router = Router();
 
@@ -33,7 +35,6 @@ router.get('/by-date', async (req, res) => {
 
 router.get('/:id/events', async (req, res) => {
   const { id } = req.params;
-  console.log("Solicitando eventos para ID:", id); // LOG DE DEBUG
 
   try {
     const events = await getMatchEventsController(Number(id));
@@ -41,6 +42,48 @@ router.get('/:id/events', async (req, res) => {
   } catch (error) {
     console.error('ERROR REAL EN EL BACKEND:', error); // ESTO TE DIRÁ EL PROBLEMA
     return res.status(500).json({ error: String(error) });
+  }
+});
+
+router.get('/team/:name', async (req, res) => {
+  const { name } = req.params;
+
+  try {
+    if (!name) {
+      return res.status(400).json({ error: 'El nombre del equipo es obligatorio.' });
+    }
+
+    const matches = await getMatchesByTeamController(name);
+    
+    if (matches.length === 0) {
+      return res.status(404).json({ message: 'No se encontraron partidos para ese equipo.' });
+    }
+
+    return res.status(200).json(matches);
+  } catch (error) {
+    console.error('Error al obtener partidos del equipo:', error);
+    return res.status(500).json({ error: 'Error interno del servidor.' });
+  }
+});
+
+router.get('/by-league/:leagueName', async (req, res) => {
+  const { leagueName } = req.params;
+
+  try {
+    if (!leagueName) {
+      return res.status(400).json({ error: 'El nombre de la liga es obligatorio.' });
+    }
+
+    const matches = await getTournamentMatchesController(leagueName);
+
+    if (matches.length === 0) {
+      return res.status(404).json({ message: 'No se encontraron partidos para ese torneo.' });
+    }
+
+    return res.status(200).json(matches);
+  } catch (error) {
+    console.error('Error al obtener partidos del torneo:', error);
+    return res.status(500).json({ error: 'Error interno del servidor.' });
   }
 });
 

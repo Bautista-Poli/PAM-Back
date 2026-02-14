@@ -1,10 +1,11 @@
 import express from 'express'
 import matchRouter from "./routes/match.route";
 import playerRouter from './routes/player.route';
-import clubRouter from './routes/club.route'
-import userRouter from './routes/user.route'
-import ratingRouter from './routes/rating.route'
-import leagueTableRouter from './routes/table.route' 
+import clubRouter from './routes/club.route';
+import userRouter from './routes/user.route';
+import ratingRouter from './routes/rating.route';
+import leagueTableRouter from './routes/table.route';
+import foroRouter from './routes/foro.route';
 
 const app = express()
 
@@ -21,6 +22,7 @@ app.use("/clubs", clubRouter);
 app.use("/user", userRouter);
 app.use("/ratings", ratingRouter);
 app.use("/league-table",leagueTableRouter);
+app.use("/foro", foroRouter);
 
 //app.use("/table", matchRowRouter);
 

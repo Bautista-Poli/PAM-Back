@@ -12,9 +12,6 @@ async function main() {
     const prisma = new PrismaClient();
 
     try {
-        // 1. Borramos solo los partidos (match_row)
-        console.log("--- Limpiando tabla match_row ---");
-        await prisma.match_row.deleteMany({});
 
         // 2. Cargamos los partidos nuevos (Secuencial)
         console.log("--- Actualizando Partidos ---");

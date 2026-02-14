@@ -13,12 +13,8 @@ interface ESPNResponse {
   }>;
 }
 
-/**
- * Sincroniza las tarjetas usando el espn_id del partido.
- * @param espnId El ID que viene de la API de ESPN (ej: "762815")
- * @param leagueUrl El slug de la liga (ej: 'arg.1')
- * @param prisma Instancia de PrismaClient
- */
+
+ 
 export async function syncMatchCardsByEspnId(espnId: string, leagueUrl: string, prisma: PrismaClient) {
   
   // 1. Buscamos el partido en nuestra DB usando el espn_id único
@@ -91,7 +87,7 @@ async function main() {
   const prisma = new PrismaClient();
   
   // AHORA USAMOS EL ID DE ESPN DIRECTAMENTE
-  const ESPN_ID = "762815"; 
+  const ESPN_ID = "762842"; 
   const LEAGUE_SLUG = "arg.1"; 
 
   console.log(`🚀 Iniciando sincronización manual por ESPN_ID: ${ESPN_ID}...`);

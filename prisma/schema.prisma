@@ -39,10 +39,10 @@ model Club_Info {
 }
 
 model league_table_row {
-  id            BigInt      @id @default(autoincrement())
+  id            BigInt   @id @default(autoincrement())
   league_preset String
   table_index   Int      @default(1)
-  table_title   String?
+  table_title   String?  // Aquí guardarás "Grupo A", "Grupo B", etc.
   team          String
   pts           Int?
   played        Int?
@@ -53,18 +53,19 @@ model league_table_row {
   ga            Int      @default(0)
   updated_at    DateTime @default(now()) @db.Timestamptz(6)
 
-
   @@unique([league_preset, table_index, team])
-}
-enum match_event_type {
-  YELLOW_CARD
-  RED_CARD
-  GOAL
-  SUBSTITUTION
 }
 
 model match_row {
+  id           Int             @id @default(autoincrement())
+  espn_id      String?         @unique
   league       String
+  
+  // --- NUEVOS CAMPOS PARA COPAS ---
+  round        String?         
+  leg          Int?            @default(1)
+  group_name   String?        
+
   home_team    String
   away_team    String
   score_home   Int?
@@ -74,17 +75,23 @@ model match_row {
   match_date   DateTime?       @default(now()) @db.Timestamptz(6)
   away_club_id Int?
   home_club_id Int?
-  id           Int             @id @default(autoincrement())
+  
   away_club    club?           @relation("AwayClub", fields: [away_club_id], references: [id])
   home_club    club?           @relation("HomeClub", fields: [home_club_id], references: [id])
   ratings      player_rating[]
-  espn_id       String?         @unique
+  comments     match_comment[]
 
   @@index([home_club_id])
   @@index([away_club_id])
   @@unique([home_team, away_team, match_date])
 }
 
+enum match_event_type {
+  YELLOW_CARD
+  RED_CARD
+  GOAL
+  SUBSTITUTION
+}
 
 model match_event {
   id              Int      @id @default(autoincrement())
@@ -111,6 +118,7 @@ model user_table {
   club_id    Int
   contrasena String
   ratings    player_rating[]
+  comments     match_comment[]
   club       club            @relation(fields: [club_id], references: [id])
 }
 
@@ -137,5 +145,19 @@ model player_rating {
 
   @@unique([user_id, match_id, player_id])
   @@index([player_id])
+  @@index([match_id])
+}
+
+model match_comment {
+  id         Int      @id @default(autoincrement())
+  match_id   Int
+  user_id    Int
+  text       String   @db.Text
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+
+  // Relaciones para poder hacer JOINs fácilmente
+  match      match_row  @relation(fields: [match_id], references: [id], onDelete: Cascade)
+  user       user_table @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
   @@index([match_id])
 }

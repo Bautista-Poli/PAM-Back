@@ -1,5 +1,7 @@
+//parseASpecificMatch.ts
+
 import { PrismaClient } from '@prisma/client';
-import { syncMatchCardsByEspnId } from './parseMatchInfoApi';
+import { syncMatchCardsByEspnId } from './parseHelper';
 
 // Definimos la estructura mínima que devuelve el Summary de ESPN
 interface ESPSummaryResponse {
@@ -84,7 +86,7 @@ export async function forceLoadPastMatch(leagueUrl: string, eventId: string, pri
 // Bloque de ejecución
 (async () => {
     const prisma = new PrismaClient();
-    const ESPN_ID = "762815"; 
+    const ESPN_ID = "762848"; 
     const LEAGUE_SLUG = "arg.1"; 
 
     await forceLoadPastMatch(LEAGUE_SLUG, ESPN_ID, prisma);
