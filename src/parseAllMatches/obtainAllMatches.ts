@@ -83,3 +83,19 @@ export async function obtainAllMatches(leagueData: leagueUrlAndName, prisma: Pri
         });
     }
 }
+
+(async () => {
+    const prisma = new PrismaClient();
+    
+    const leagueData = { 
+        url: "arg.1", 
+        name: "Liga Profesional Argentina" 
+    };
+
+    console.log(`Iniciando actualización de ${leagueData.name}...`);
+    
+    await obtainAllMatches(leagueData, prisma);
+    
+    await prisma.$disconnect();
+    console.log("🏁 Proceso finalizado.");
+})();

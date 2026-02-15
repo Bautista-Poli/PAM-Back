@@ -87,7 +87,7 @@ async function main() {
   const prisma = new PrismaClient();
   
   // AHORA USAMOS EL ID DE ESPN DIRECTAMENTE
-  const ESPN_ID = "762842"; 
+  const ESPN_ID = "762836"; 
   const LEAGUE_SLUG = "arg.1"; 
 
   console.log(`🚀 Iniciando sincronización manual por ESPN_ID: ${ESPN_ID}...`);

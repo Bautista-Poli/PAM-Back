@@ -86,8 +86,8 @@ export async function forceLoadPastMatch(leagueUrl: string, eventId: string, pri
 // Bloque de ejecución
 (async () => {
     const prisma = new PrismaClient();
-    const ESPN_ID = "762848"; 
-    const LEAGUE_SLUG = "arg.1"; 
+    const ESPN_ID = "762838";
+    const LEAGUE_SLUG = "arg.1";
 
     await forceLoadPastMatch(LEAGUE_SLUG, ESPN_ID, prisma);
     await prisma.$disconnect();

@@ -13,9 +13,13 @@ function checkApiResponseType(ApiTablesResponse: any) {
 
 export async function updateTable(leagueData: Array<leagueUrlAndName>, prisma: PrismaClient) {
 
-    await prisma.league_table_row.deleteMany({});
+    const leagueNames = leagueData.map(l => l.name);
+    await prisma.league_table_row.deleteMany({
+        where: { league_preset: { in: leagueNames } }
+    });
+
     for(let i = 0; i < leagueData.length;i++){
-        const espnApiUrl = 'https://site.api.espn.com/apis/v2/sports/soccer/'+leagueData[i].url+'/standings?season=2025';
+        const espnApiUrl = 'https://site.api.espn.com/apis/v2/sports/soccer/'+leagueData[i].url+'/standings?season=2026';
 
         const apiResponse = await fetch(espnApiUrl);
         if(!apiResponse.ok){
@@ -43,15 +47,33 @@ export async function updateTable(leagueData: Array<leagueUrlAndName>, prisma: P
                     losses:  parseInt(entry.stats[1].displayValue),
                     gf: parseInt(entry.stats[5].displayValue),
                     ga: parseInt(entry.stats[4].displayValue),
-                    updated_at: new Date(),            
+                    updated_at: new Date(),
                 }
             })
             await prisma.league_table_row.createMany({ data: tableEntries, skipDuplicates: true });
         }
     }
-
-    
     
 }
 
+// --- BLOQUE DE EJECUCIÓN MANUAL ---
+(async () => {
+    const prisma = new PrismaClient();
+    
+    // Array con las ligas que quieres actualizar
+    const ligasAActualizar = [
+        { url: "arg.1", name: "Liga Profesional Argentina" }
+        // { url: "eng.1", name: "Premier League" } // Puedes agregar más aquí
+    ];
 
+    console.log("🚀 Iniciando actualización de tablas de posiciones...");
+    
+    try {
+        await updateTable(ligasAActualizar, prisma);
+        console.log("✅ Tablas actualizadas correctamente en la base de datos.");
+    } catch (error) {
+        console.error("❌ Error al actualizar las tablas:", error);
+    } finally {
+        await prisma.$disconnect();
+    }
+})();
