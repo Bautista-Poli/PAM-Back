@@ -28,9 +28,7 @@ export async function updateTable(leagueData: Array<leagueUrlAndName>, prisma: P
         const apiData = await apiResponse.json() as ApiStandingsResponse;
 
         checkApiResponseType(apiData)
-        //console.log(apiData.children[0].standings.entries[0].stats[0]);
         
-
         for(let j=0 ;j < apiData.children.length;j++){
             const tableEntries = apiData.children[j].standings.entries.map((entry: StandingsEntry ) => {
 

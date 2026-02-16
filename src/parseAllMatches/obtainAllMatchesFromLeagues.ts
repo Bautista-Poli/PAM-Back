@@ -11,14 +11,11 @@ async function main() {
     const prisma = new PrismaClient();
 
     try {
-        // IMPORTANTE: Ya no borramos match_row para que el upsert 
-        // pueda actualizar marcadores sin perder IDs previos.
 
         console.log("--- Iniciando Actualización de Ligas ---");
         for (const league of leagueUrls) {
             console.log(`\n> Trabajando con: ${league.name}`);
             
-            // 1. Cargamos todos los partidos de la temporada
             await obtainAllMatches(league, prisma); 
         }
 

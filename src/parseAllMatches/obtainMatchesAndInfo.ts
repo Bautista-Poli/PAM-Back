@@ -145,7 +145,6 @@ export async function obtainAndProcessAllMatches(leagueData: LeagueUrlAndName, p
 
         let match_date = new Date(event.date);
         if (leagueName === 'Liga Profesional Argentina') {
-            // Ajuste de zona horaria
             match_date.setHours(match_date.getHours() - 3);
         }
 

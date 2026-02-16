@@ -17,8 +17,6 @@ export async function getCommentsController(matchId: number) {
 }
 
 export async function createCommentController(matchId: number, userId: number, text: string) {
-  // La validación de contenido vacío ya está en el modelo/frontend, 
-  // pero aquí ejecutamos la creación pura
   return await prisma.match_comment.create({
     data: {
       match_id: matchId,

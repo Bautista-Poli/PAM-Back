@@ -3,7 +3,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function getPlayerHistoryController(playerId: number) {
-  // 1. Buscamos todos los ratings del jugador
   const ratings = await prisma.player_rating.findMany({
     where: { 
       player_id: playerId,
@@ -15,8 +14,7 @@ export async function getPlayerHistoryController(playerId: number) {
     }
   });
 
-  // 2. Agrupamos por partido para promediar
-  // Usamos un Map para consolidar los ratings de un mismo match_id
+
   const historyMap = new Map();
 
   ratings.forEach(r => {
@@ -31,7 +29,6 @@ export async function getPlayerHistoryController(playerId: number) {
         competition: match.league || "Liga",
         totalRating: 0,
         count: 0,
-        // Guardamos estos para el front
         goals: 0, 
         assists: 0,
         minutesPlayed: 90 
@@ -43,11 +40,10 @@ export async function getPlayerHistoryController(playerId: number) {
     current.count += 1;
   });
 
-  // 3. Convertimos el Map a un array y calculamos el promedio final
   return Array.from(historyMap.values())
     .map(item => ({
       ...item,
-      rating: item.totalRating / item.count, // Promedio real
+      rating: item.totalRating / item.count,
     }))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

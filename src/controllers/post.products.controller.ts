@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export type NewProductInput = {
   title: string;
-  description: string; 
+  description: string;
   imageUrl: string;
   price: number;
 };
@@ -17,7 +17,7 @@ export async function postProductController(product: NewProductInput) {
       title: product.title,
       description: product.description,
       imageUrl: product.imageUrl,
-      price: product.price, 
+      price: product.price,
     },
   });
   return created;

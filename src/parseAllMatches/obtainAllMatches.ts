@@ -8,8 +8,6 @@ function checkApiResponseType(apiResponse: any) {
 }
 
 export async function obtainAllMatches(leagueData: leagueUrlAndName, prisma: PrismaClient) {
-    // Usamos el año actual. Para ligas europeas en agosto, podrías usar 20242025.
-    // El limit=1000 asegura que traiga todos los partidos (aprox 380 por liga).
     const currentYear = new Date().getFullYear();
     const espnApiUrl = `https://site.web.api.espn.com/apis/site/v2/sports/soccer/${leagueData.url}/scoreboard?dates=${currentYear}&limit=1000`;
     
@@ -24,7 +22,6 @@ export async function obtainAllMatches(leagueData: leagueUrlAndName, prisma: Pri
     const allEvents = data.events || [];
     const leagueName = leagueData.name;
     
-    // Optimizamos búsqueda de clubs
     const clubs = await prisma.club.findMany({
         select: { id: true, league_key: true, nombre: true },
     });
@@ -87,9 +84,9 @@ export async function obtainAllMatches(leagueData: leagueUrlAndName, prisma: Pri
 (async () => {
     const prisma = new PrismaClient();
     
-    const leagueData = { 
-        url: "arg.1", 
-        name: "Liga Profesional Argentina" 
+    const leagueData = {
+        url: "arg.1",
+        name: "Liga Profesional Argentina"
     };
 
     console.log(`Iniciando actualización de ${leagueData.name}...`);

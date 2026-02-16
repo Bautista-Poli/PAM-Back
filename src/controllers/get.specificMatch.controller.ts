@@ -1,7 +1,6 @@
 import { match_row, PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-/** Convierte "YYYY-MM-DD" al rango UTC [inicio, fin) del día */
 function dayToUtcRange(dateStr: string) {
   const [y, m, d] = dateStr.split('-').map(Number);
   const start = new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0));
@@ -42,7 +41,6 @@ async function fetchLogoMap(teamNames: string[]): Promise<Map<string, string>> {
 }
 
 
-/** 4) Agrega los escudos a cada partido */
 function attachCrests(matches: match_row[], logoMap: Map<string, string>) {
   const resolveCrest = (teamName?: string) => teamName ? logoMap.get(teamName) ?? null : null;
 
@@ -53,7 +51,6 @@ function attachCrests(matches: match_row[], logoMap: Map<string, string>) {
   }));
 }
 
-/** GET /matches/by-date?date=YYYY-MM-DD  (opcional: &league=...) */
 export async function getMatchesByDateController(params: { date: string; league?: string }) {
   const matches = await fetchMatchesByDate(params.date, params.league);
   if (matches.length === 0) return [];
