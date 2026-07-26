@@ -11,7 +11,7 @@ export const getClub = async (req: Request, res: Response) => {
       where: {
 
         nombre: {
-          equals: nombre,
+          equals: nombre as string,
           mode: 'insensitive',
         }
       },

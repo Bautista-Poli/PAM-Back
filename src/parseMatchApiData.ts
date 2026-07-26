@@ -70,25 +70,22 @@ export async function updateMatches(leagueData: leagueUrlAndName, prisma: Prisma
     // 3. Filtrar duplicados en memoria antes de ir a DB
     const seenMatches = new Set<string>();
     const uniqueMatches = matches.filter(match => {
-        const matchIdentifier = `${match.home_team}-${match.away_team}-${match.match_date.getTime()}`;
-        if (seenMatches.has(matchIdentifier)) return false;
-        seenMatches.add(matchIdentifier);
+        //const matchIdentifier = `${match.home_team}-${match.away_team}-${match.match_date.getTime()}`;
+        if (seenMatches.has(match.espn_id)) return false;
+        seenMatches.add(match.espn_id);
         return true;
     });
 
     console.log(`Procesando ${uniqueMatches.length} partidos únicos para ${leagueName}...`);
 
+    
     // 4. UPSERT: Inserta si no existe, actualiza si ya existe.
     // Esto protege tus player_ratings históricos.
     for (const match of uniqueMatches) {
         await prisma.match_row.upsert({
             where: {
                 // Nombre del constraint generado por Prisma basado en tu @@unique
-                home_team_away_team_match_date: {
-                    home_team: match.home_team,
-                    away_team: match.away_team,
-                    match_date: match.match_date,
-                }
+                espn_id: match.espn_id,
             },
             update: {
                 score_home: match.score_home,
